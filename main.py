@@ -1,5 +1,6 @@
 def main():
     import random
+    import time
     
     print("Welcome to the Sword Coast. You're a traveler who's been in search of their next quest, so you head to the nearest tavern. On your way there, you stumble across a group of goblins on the road. Do you attempt to 'walk by' or 'fight'?")
 
@@ -18,25 +19,45 @@ def main():
         else:
             print("Invalid input, please choose 'fight' or 'walk by'")
 
-        user_input = input(">").lower()
+            user_input = input(">").lower()
 
-        if in_battle and user_input == "negotiate":
-            print("The goblins don't seem interested in talking and charge towards you.")
-            print("What do you do? 'run' or 'fight'?")
-        elif in_battle and user_input == "fight":
-            print(f"You successfully defeat the goblins in battle and find a {random.choice(item_drops)}")
-            in_battle = False
+            if in_battle and user_input == "negotiate":
+                print("The goblins don't seem interested in talking and charge towards you.")
+                print("What do you do? 'run' or 'fight'?")
+            elif in_battle and user_input == "fight":
+                print(f"You successfully defeat the goblins in battle and find a {random.choice(item_drops)}")
+                in_battle = False
 
-        user_input = input(">").lower()
-        
-        if in_battle and user_input == "fight":
-            print(f"You successfully defeat the goblins in battle and find a {random.choice(item_drops)}")
-            in_battle = False
-        elif user_input == "run":
-            print("Like a coward, you run from the encounter.")
-            in_battle = False
+            user_input = input(">").lower()
+            
+            if in_battle and user_input == "fight":
+                print(f"You successfully defeat the goblins in battle and find a {random.choice(item_drops)}")
+                in_battle = False
+            elif user_input == "run":
+                print("Like a coward, you run from the encounter.")
+                in_battle = False
     
-    print("Following the encounter with the goblins, you make you way to the town's tavern.")
+    print("Following the encounter with the goblins, you make your way to the town's tavern.")
     print("A weary looking farmer approaches you.")
+    print("The farmer asks you to take care of a pack of wolves that have been terrorizing his livestock. Do you 'accept' or 'decline' this quest?")
+
+    in_dialogue = True
+    while in_dialogue:
+
+        user_input = input(">").lower()
+
+        if user_input == "accept":
+            print("You follow the farmer back to his farm. He informs you that they usually attack at night. You take a seat and patiently wait until nightfall.")
+            in_dialogue = False
+        elif user_input =="decline":
+            print("The farmer insists, and explains that he fears for his daughters safety.")
+        else:
+            print("Please select either 'accept' or 'declibe'")
+
+    print("As nightfall creeps across the farm and envelopes the farm, you hear howling in the near distance.")
+
+    time.sleep(4)
+
+    print("The wolves emerge from the surrounding darkness. You count a total of 3. You can take them.")
 
 main()

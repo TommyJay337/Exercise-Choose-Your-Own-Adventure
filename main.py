@@ -60,4 +60,9 @@ def main():
 
     print("The wolves emerge from the surrounding darkness. You count a total of 3. You can take them.")
 
+    in_wolf_encounter = True
+    while in_wolf_encounter:
+        print()
+        user_input = input(">").lower()
+
 main()

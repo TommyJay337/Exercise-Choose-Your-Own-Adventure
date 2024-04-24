@@ -58,10 +58,18 @@ def main():
 
     print("As nightfall creeps across the farm and envelopes the farm, you hear howling in the near distance.")
 
+    print("The wolves emerge from the surrounding darkness. You count a total of 3. You can take them...")
 
-    printProgressBar()
+    items = list(range(0, 50))
+    l = len(items)
 
-    print("The wolves emerge from the surrounding darkness. You count a total of 3. You can take them.")
+    # Initial call to print 0% progress
+    printProgressBar(0, l, length = 50)
+    for i, item in enumerate(items):
+        # Do stuff...
+        time.sleep(0.3)
+        # Update Progress Bar
+        printProgressBar(i + 1, l, length = 50)
 
     in_wolf_encounter = True
     while in_wolf_encounter:

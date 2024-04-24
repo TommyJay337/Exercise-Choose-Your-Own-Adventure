@@ -1,6 +1,8 @@
+import random
+import time
+from loading_bar import printProgressBar
+
 def main():
-    import random
-    import time
     
     print("Welcome to the Sword Coast. You're a traveler who's been in search of their next quest, so you head to the nearest tavern. On your way there, you stumble across a group of goblins on the road. Do you attempt to 'walk by' or 'fight'?")
 
@@ -52,11 +54,12 @@ def main():
         elif user_input =="decline":
             print("The farmer insists, and explains that he fears for his daughters safety.")
         else:
-            print("Please select either 'accept' or 'declibe'")
+            print("Please select either 'accept' or 'decline'")
 
     print("As nightfall creeps across the farm and envelopes the farm, you hear howling in the near distance.")
 
-    time.sleep(4)
+
+    printProgressBar()
 
     print("The wolves emerge from the surrounding darkness. You count a total of 3. You can take them.")
 
